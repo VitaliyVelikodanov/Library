@@ -1,0 +1,6 @@
+<p>
+	<a href="list">List</a> |
+	<a href="add.jsp">Add new</a> |
+	<a href="takeBook">Take book</a> |
+</p>
+<hr />

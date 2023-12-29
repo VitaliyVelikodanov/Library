@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Books xmlns="http://book.nure.ua/entity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://book.nure.ua/entity Books.xsd">
+    <Book Id="1">
+        <Title>BOOK_TITLE</Title>
+        <Body>BOOK_BODY</Body>
+        <Author Id="1">
+            <Name>Vitalok</Name>
+            <PlaceOfBirth>Kharkov</PlaceOfBirth>
+            <Biography>biography</Biography>
+            <MajorWorks>mahorqorks</MajorWorks>
+        </Author>
+        <Genre Id="1">
+            <GenreName>genrename</GenreName>
+            <BookId>1</BookId>
+        </Genre>
+    </Book>
+</Books>

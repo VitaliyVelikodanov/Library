@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://book.nure.ua/entity"
+            elementFormDefault="qualified">
+
+    <xsd:complexType name="EntityWithId">
+        <xsd:attribute name="Id" type="xsd:int" use="required"/>
+    </xsd:complexType>
+</xsd:schema>

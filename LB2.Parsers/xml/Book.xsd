@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Book" nillable="true" type="Book" />
+  <xs:complexType name="Book">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntityWithId">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Title" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Body" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Authors" type="ArrayOfAuthor" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Genres" type="ArrayOfGenre" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EntityWithId">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Genre">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntityWithId">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="GenreName" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="BookId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Author">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntityWithId">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="DateOnly" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PlaceOfBirth" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Biography" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MajorWorks" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DateOnly" />
+  <xs:complexType name="ArrayOfAuthor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Author" nillable="true" type="Author" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfGenre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Genre" nillable="true" type="Genre" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
